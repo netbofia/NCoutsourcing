@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to #{title}
+    p=users.length
+    table
+        tbody
+            each row in users
+                tr
+                   each key in Object.keys(row.dataValues)
+                        td=row.dataValues[key]

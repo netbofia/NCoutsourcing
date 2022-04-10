@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    - now=new Date()
+    each employee in employees
+        .card.bg-secondary
+            .card-header
+                .row
+                    .col-2
+                        img.rounded-circle(width="100%",src=employee.photo)
+                    .col-10
+                        h5 #{employee.User_data.dataValues.first_name} #{employee.User_data.dataValues.last_name}
+                        p
+                            span.badge.bg-success Área de trabalho
+                            | #{employee.dataValues.work_area}
+                            span.badge.bg-success Categoria
+                            | #{employee.dataValues.rank}
+                            span.badge.bg-success Valor por hora
+                            | #{employee.dataValues.hourly_rate}
+                        p=employee.dataValues.description
+
+            .card-body
+
+
